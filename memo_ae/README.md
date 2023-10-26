@@ -28,13 +28,15 @@ bash get_turbostat.sh
 vim ../util_scripts/env.sh
 ```
 1. Set `CLOSEST_NODE`: The NUMA node that the CXL device is directly attached to.  
-    - From mlc output in `results/mlc.txt`, find the NUMA node that has the lowest latency to CXL memory
     - Command `sudo lspci -vvv` should also show the NUMA node that a CXL device attaches to.
 2. Set `CLOSEST_CORE`: This is one of the CPU cores within CLOSEST NODE 
     - Place the first core number of the `CLOSEST_NODE` in `CLOSEST_CORE`. You may find the core range of a NUMA node using this command: `numactl -H`. 
     - For example, if CXL is connected to NUMA node 1, please place the first CPU in `node 1 cpus: XX, XX+1` (XX) in `CLOSEST_CPU`. 
 3. Set `TSC_FREQ`:
     - This should be the output from `Test Turbo stat` in `results/turbostat.txt`, it should look like this: 
+4. Set `MAX_NODE`
+    - For a machine with 2 socket and 1 CXL node, this should be set to "2"
+    - For a machine with 1 socket and 1 CXL node, this should be set to "1"
 ```
 Core	CPU	Avg_MHz	Busy%	Bzy_MHz	TSC_MHz	IPC	IRQ	SMI	POLL	C1	C1E	C3	C6	POLL%	C1%	C1E%	C3%	C6%	CPU%c1	CPU%c3	CPU%c6	CoreTmp	CoreThr	PkgTmp	Pkg%pc2	Pkg%pc3	Pkg%pc6	PkgWatt	RAMWatt	PKG_%	RAM_%
 -	-	10	0.57	1753	2000	0.52	985	0	14	15	108	0	945	0.00	0.12	0.40	0.00	98.93	2.23	0.00	97.20	22	0	25	2.14	0.00	76.94	25.52	0.00	0.00	0.00

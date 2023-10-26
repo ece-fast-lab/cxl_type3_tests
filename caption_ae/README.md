@@ -10,6 +10,9 @@
         * `numa_tier_interleave_top` for top tier
         * `numa_tier_interleave_bot` for bot tier
       + The rest of the patch is applied without any modification
+    - Intel PCM
+      + Please follow [intel-pcm](https://github.com/intel/pcm) to clone and build PCM.
+      + Please update the `PCM_PATH` in `metrics/pcm_mon.py` to your pcm binary path.
 
 ### Clone
 ```bash
