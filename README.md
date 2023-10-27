@@ -5,7 +5,7 @@ This repository contains two parts:
 
 They are the correpsonding artifacts of the paper `Demystifying CXL Memory with True CXL-Ready Systems and CXL Memory Devices (MICRO'23)`, the first research work of CXL memory characterization based on real CXL hardware devices. 
 
-For the artifact evaluation configurations, please refer to [link to config repo]()
+For the artifact evaluation configurations, please refer to [link to config repo](https://github.com/ece-fast-lab/cxl_type3_tests_ae)
 
 ### Contact
 
